@@ -8,6 +8,14 @@ namespace AsyncParallelSamples.Part2
 {
     public class AsyncThenAndNow
     {
+        //await is not special without async keyword
+        public void PrintNumber()
+        {
+            var await = 2;
+
+            Console.WriteLine(await);
+        }
+
         private Task<decimal> CalculateAmountAsync()
         {
             return Task.FromResult(0.0m);
