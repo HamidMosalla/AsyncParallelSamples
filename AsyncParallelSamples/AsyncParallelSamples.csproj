@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AwaitReleaseThreadToCaller.cs" />
+    <Compile Include="Part2\AsyncThenAndNow.cs" />
+    <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
