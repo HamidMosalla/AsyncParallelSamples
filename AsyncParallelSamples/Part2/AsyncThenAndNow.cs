@@ -8,26 +8,30 @@ namespace AsyncParallelSamples.Part2
 {
     public class AsyncThenAndNow
     {
-        private Task<decimal> CalculateMeaningOfLifeAsync()
+        private Task<decimal> CalculateAmountAsync()
         {
             return Task.FromResult(0.0m);
         }
 
-        private void ButtonClick(object sender, EventArgs e)
+        private void PrintAmount()
         {
-            Task<decimal> calculation = CalculateMeaningOfLifeAsync();
+            Task<decimal> calculationTask = CalculateAmountAsync();
 
-            calculation.ContinueWith(calculationTask =>
+            calculationTask.ContinueWith(t =>
             {
-                if (!(calculationTask.Exception is AggregateException errors))
+                var errors = t.Exception as AggregateException;
+
+                if (errors == null)
                 {
-                    Console.WriteLine(calculation.Result);
+                    Console.WriteLine(t.Result);
                 }
+
                 else
                 {
                     Exception actualException = errors.InnerExceptions.First();
                     Console.WriteLine(actualException.Message);
                 }
+
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
     }
