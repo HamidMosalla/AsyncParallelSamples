@@ -13,7 +13,7 @@ namespace AsyncParallelSamples.Part2
             return Task.FromResult(0.0m);
         }
 
-        private void PrintAmount()
+        private void Then()
         {
             Task<decimal> calculationTask = CalculateAmountAsync();
 
@@ -33,6 +33,19 @@ namespace AsyncParallelSamples.Part2
                 }
 
             }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private async void Now()
+        {
+            try
+            {
+                decimal result = await CalculateAmountAsync();
+                Console.WriteLine(result);
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+            }
         }
     }
 }
