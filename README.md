@@ -1,5 +1,5 @@
 # AsyncParallelSamples
-This repository contains sample codes related to a series of post on asynchronous and parallel programming in .Net. You can find these post on my [blog](http://hamidmosalla.com).  
+This repository contains sample codes related to a series of post on asynchronous and parallel programming in .Net. You can find these posts on my [blog](http://hamidmosalla.com).  
 
 [Asynchronous And Parallel Programming In .Net – Part 1 – Introduction](http://hamidmosalla.com/2018/03/16/asynchronous-and-parallel-programming-in-net-part-1/)
 
