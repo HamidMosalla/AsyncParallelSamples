@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Part2\AsyncThenAndNow.cs" />
     <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
+    <Compile Include="Part3\ExponentialBackOff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
