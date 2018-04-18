@@ -23,5 +23,20 @@ namespace AsyncParallelSamples.Misc
             _value = 13;
             _initialized.Set();
         }
+
+        public static void Block()
+        {
+            var blockThingy = new BlockingSignals();
+
+            int value = 0;
+
+            Task.Run(() =>
+            {
+                Thread.Sleep(5000);
+                blockThingy.InitializeFromAnotherThread();
+            });
+
+            value = blockThingy.WaitForInitialization();
+        }
     }
 }
