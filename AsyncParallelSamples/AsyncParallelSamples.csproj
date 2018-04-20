@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Misc\AsyncLazy.cs" />
     <Compile Include="Misc\BlockingSignals.cs" />
+    <Compile Include="Misc\AsyncProperty.cs" />
     <Compile Include="Misc\ParallelMethodInvocation.cs" />
     <Compile Include="Part2\AsyncThenAndNow.cs" />
     <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
