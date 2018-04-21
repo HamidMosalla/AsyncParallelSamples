@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Misc\AsyncDispose.cs" />
     <Compile Include="Misc\AsyncLazy.cs" />
+    <Compile Include="Misc\AvoidAsyncVoid.cs" />
     <Compile Include="Misc\BlockingSignals.cs" />
     <Compile Include="Misc\AsyncProperty.cs" />
     <Compile Include="Misc\ParallelMethodInvocation.cs" />

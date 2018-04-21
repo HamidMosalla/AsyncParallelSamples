@@ -13,10 +13,12 @@ namespace AsyncParallelSamples
     {
         static async Task Main(string[] args)
         {
-            AwaitReleaseThreadToCaller.Print();
-            BlockingSignals.Block();
+            //AwaitReleaseThreadToCaller.Print();
+            //BlockingSignals.Block();
 
-
+            
         }
+
+        
     }
 }
