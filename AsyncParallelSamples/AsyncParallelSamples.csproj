@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Misc\AsyncDispose.cs" />
     <Compile Include="Misc\AsyncLazy.cs" />
     <Compile Include="Misc\BlockingSignals.cs" />
     <Compile Include="Misc\AsyncProperty.cs" />
