@@ -15,10 +15,14 @@ namespace AsyncParallelSamples
         {
             //AwaitReleaseThreadToCaller.Print();
             //BlockingSignals.Block();
+            var taskYield = new TaskYield();
 
-            
+
+            await taskYield.Demo();
+
+
         }
 
-        
+
     }
 }
