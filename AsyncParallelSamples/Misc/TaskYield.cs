@@ -9,7 +9,7 @@ namespace AsyncParallelSamples.Misc
 {
     public class TaskYield
     {
-        public async Task WorkThenWait()
+        public static async Task WorkThenWait()
         {
             //await Task.Yield();
             //long running synchronous operation
@@ -18,7 +18,7 @@ namespace AsyncParallelSamples.Misc
             await Task.Delay(1000);
         }
 
-        public async Task Demo()
+        public static async Task Demo()
         {
             var child = WorkThenWait();
             Console.WriteLine("started");
