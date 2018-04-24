@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AsyncParallelSamples.Collections;
 using AsyncParallelSamples.Misc;
 using AsyncParallelSamples.Part2;
 
@@ -16,9 +17,7 @@ namespace AsyncParallelSamples
             //AwaitReleaseThreadToCaller.Print();
             //BlockingSignals.Block();
             //await TaskYield.Demo();
-
+            ImmutableCollections.UseImmutableStack();
         }
-
-
     }
 }
