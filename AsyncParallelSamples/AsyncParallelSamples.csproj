@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\ConcurrentCollections.cs" />
     <Compile Include="Collections\ImmutableCollections.cs" />
     <Compile Include="Misc\AsyncDispose.cs" />
     <Compile Include="Misc\AsyncLazy.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Part2\AsyncThenAndNow.cs" />
     <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
     <Compile Include="Part3\ExponentialBackOff.cs" />
+    <Compile Include="Part5\WhenAnyExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

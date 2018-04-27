@@ -17,7 +17,26 @@ namespace AsyncParallelSamples
             //AwaitReleaseThreadToCaller.Print();
             //BlockingSignals.Block();
             //await TaskYield.Demo();
-            ImmutableCollections.UseImmutableStack();
+            //ImmutableCollections.UseImmutableStack();
+
+            var result2 = await Task.WhenAny(Task1(), Task2());
+
+            var result1 = await Task.WhenAll(Task1(), Task2());
+
+            Task.WaitAny(Task1(), Task2());
+            Task.WaitAll(Task1(), Task2());
+        }
+
+        public static async Task<int> Task1()
+        {
+            await Task.Delay(2000);
+            return 2;
+        }
+
+        public static async Task<int> Task2()
+        {
+            await Task.Delay(2000);
+            return 2;
         }
     }
 }
