@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace AsyncParallelSamples.Collections
 {
-    public static class ConcurrentCollections
+    public class ConcurrentCollections
     {
+        //A blocking queue needs to be shared by multiple threads, so it is usually defined as a private, read-only field:
+        private readonly BlockingCollection<int> _blockingQueue = new BlockingCollection<int>();
 
         public static void UseConcurrentDictionary()
         {
@@ -25,5 +27,17 @@ namespace AsyncParallelSamples.Collections
             dictionary[0] = "Zero";
         }
 
+        public void ProducerBlockingCollection()
+        {
+            _blockingQueue.Add(7);
+            _blockingQueue.Add(13);
+            _blockingQueue.CompleteAdding();
+        }
+
+        public void ConsumeBlockingCollection()
+        {
+            // Displays "7" followed by "13".
+            foreach (var item in _blockingQueue.GetConsumingEnumerable()) Console.WriteLine(item);
+        }
     }
 }
