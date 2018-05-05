@@ -11,7 +11,14 @@ namespace AsyncParallelSamples.Collections
     public class ConcurrentCollections
     {
         //A blocking queue needs to be shared by multiple threads, so it is usually defined as a private, read-only field:
+        //This is currently a queue,but it also can be a stack if you want
         private readonly BlockingCollection<int> _blockingQueue = new BlockingCollection<int>();
+
+        //Like so, stack
+        BlockingCollection<int> _blockingStack = new BlockingCollection<int>(new ConcurrentStack<int>());
+
+        //or bag (list)
+        BlockingCollection<int> _blockingBag = new BlockingCollection<int>( new ConcurrentBag<int>());
 
         public static void UseConcurrentDictionary()
         {
@@ -28,31 +35,58 @@ namespace AsyncParallelSamples.Collections
             dictionary[0] = "Zero";
         }
 
-        public void ProducerBlockingCollection()
+        public void ProducerBlockingQueue()
         {
             _blockingQueue.Add(7);
             _blockingQueue.Add(13);
             _blockingQueue.CompleteAdding();
         }
 
-        public void ConsumeBlockingCollection()
+        public void ConsumeBlockingQueue()
         {
             // Displays "7" followed by "13".
             foreach (var item in _blockingQueue.GetConsumingEnumerable()) Console.WriteLine(item);
         }
 
-        public async Task UseBlockingCollection()
+        public async Task UseBlockingQueue()
         {
             var blocking = new ConcurrentCollections();
 
             Task.Run(() =>
             {
                 Thread.Sleep(4000);
-                blocking.ProducerBlockingCollection();
+                blocking.ProducerBlockingQueue();
             });
 
             //This method will print after 4000 ms, right after CompleteAdding is called, before that it's blocked
-            blocking.ConsumeBlockingCollection();
+            blocking.ConsumeBlockingQueue();
+        }
+
+        public void ProducerBlockingStack()
+        {
+            _blockingStack.Add(7);
+            _blockingStack.Add(13);
+            _blockingStack.CompleteAdding();
+        }
+
+        public void ConsumeBlockingStack()
+        {
+            // Displays "7" followed by "13".
+            foreach (var item in _blockingStack.GetConsumingEnumerable()) Console.WriteLine(item);
+        }
+
+        public async Task UseBlockingCStack()
+        {
+            var blocking = new ConcurrentCollections();
+
+            Task.Run(() =>
+            {
+                Thread.Sleep(4000);
+                blocking.ProducerBlockingStack();
+            });
+
+            //This method will print after 4000 ms, right after CompleteAdding is called, before that it's blocked
+            blocking.ConsumeBlockingStack();
         }
     }
 }

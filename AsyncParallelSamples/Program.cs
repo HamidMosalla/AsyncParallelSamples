@@ -19,7 +19,8 @@ namespace AsyncParallelSamples
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
 
-            
+            var blog = new ConcurrentCollections();
+            await blog.UseBlockingQueue();
         }
 
         public static async Task<int> Task1()
