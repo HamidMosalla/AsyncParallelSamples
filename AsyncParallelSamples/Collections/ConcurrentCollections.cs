@@ -35,6 +35,8 @@ namespace AsyncParallelSamples.Collections
             dictionary[0] = "Zero";
         }
 
+
+
         public void ProducerBlockingQueue()
         {
             _blockingQueue.Add(7);
@@ -62,6 +64,9 @@ namespace AsyncParallelSamples.Collections
             blocking.ConsumeBlockingQueue();
         }
 
+
+
+
         public void ProducerBlockingStack()
         {
             _blockingStack.Add(7);
@@ -87,6 +92,36 @@ namespace AsyncParallelSamples.Collections
 
             //This method will print after 4000 ms, right after CompleteAdding is called, before that it's blocked
             blocking.ConsumeBlockingStack();
+        }
+
+
+
+
+        public void ProducerBlockingBag()
+        {
+            _blockingBag.Add(7);
+            _blockingBag.Add(13);
+            _blockingBag.CompleteAdding();
+        }
+
+        public void ConsumeBlockingBag()
+        {
+            // Displays "7" followed by "13".
+            foreach (var item in _blockingBag.GetConsumingEnumerable()) Console.WriteLine(item);
+        }
+
+        public async Task UseBlockingCBag()
+        {
+            var blocking = new ConcurrentCollections();
+
+            Task.Run(() =>
+            {
+                Thread.Sleep(4000);
+                blocking.ProducerBlockingBag();
+            });
+
+            //This method will print after 4000 ms, right after CompleteAdding is called, before that it's blocked
+            blocking.ConsumeBlockingBag();
         }
     }
 }
