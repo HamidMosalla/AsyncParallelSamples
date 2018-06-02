@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Collections\ConcurrentCollections.cs" />
     <Compile Include="Collections\ImmutableCollections.cs" />
+    <Compile Include="DataflowMesh\TransformBlock.cs" />
     <Compile Include="Misc\AsyncDispose.cs" />
     <Compile Include="Misc\AsyncLazy.cs" />
     <Compile Include="Misc\AvoidAsyncVoid.cs" />

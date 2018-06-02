@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AsyncParallelSamples.Collections;
 using AsyncParallelSamples.Misc;
 using AsyncParallelSamples.Part2;
+using AsyncParallelSamples.Part5;
 
 namespace AsyncParallelSamples
 {
@@ -18,6 +19,7 @@ namespace AsyncParallelSamples
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
+            await GetAllExceptions.OnlyTheFirstOne();
 
             var blog = new ConcurrentCollections();
             await blog.UseBlockingQueue();

@@ -11,7 +11,7 @@ namespace AsyncParallelSamples.Part5
         private static Task ThrowInvalidOperationExceptionAsync() => throw new NotImplementedException();
         private static Task ThrowNotImplementedExceptionAsync() => throw new InvalidOperationException();
 
-        private static async Task ObserveAllExceptionsAsync()
+        public static async Task ObserveAllExceptionsAsync()
         {
             var task1 = ThrowNotImplementedExceptionAsync();
             var task2 = ThrowInvalidOperationExceptionAsync();
@@ -24,6 +24,23 @@ namespace AsyncParallelSamples.Part5
             catch
             {
                 AggregateException allExceptions = allTasks.Exception;
+            }
+        }
+
+        public static async Task OnlyTheFirstOne()
+        {
+            var task1 = ThrowNotImplementedExceptionAsync();
+            var task2 = ThrowInvalidOperationExceptionAsync();
+
+            Task allTasks = Task.WhenAll(task1, task2);
+
+            try
+            {
+                await allTasks;
+            }
+            catch(Exception e)
+            {
+                
             }
         }
     }
