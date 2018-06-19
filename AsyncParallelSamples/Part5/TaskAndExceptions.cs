@@ -44,5 +44,55 @@ namespace AsyncParallelSamples.Part5
 
             }
         }
+
+        public static void AggregateException()
+        {
+            var task1 = Task.Run(() => throw new ArgumentException("This exception is expected!"));
+
+            try
+            {
+                task1.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                foreach (var e in ae.InnerExceptions)
+                {
+                    // Handle the custom exception.
+                    if (e is ArgumentException)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                    // Rethrow any other exception.
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+
+        public static void NestedAggregateException()
+        {
+            var task1 = Task.Factory.StartNew(() =>
+            {
+                var child1 = Task.Factory.StartNew(() =>
+                {
+                    var child2 = Task.Factory.StartNew(() => throw new InvalidOperationException("Attached child2 faulted."), TaskCreationOptions.AttachedToParent);
+
+                    throw new InvalidOperationException("Attached child1 faulted.");
+
+                }, TaskCreationOptions.AttachedToParent);
+            });
+
+            try
+            {
+                task1.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                var nestedExceptions = task1.Exception;
+                var flatNestedExceptions = task1.Exception.Flatten();
+            }
+        }
     }
 }
