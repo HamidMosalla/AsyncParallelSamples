@@ -66,7 +66,7 @@
     <Compile Include="Part2\AsyncThenAndNow.cs" />
     <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
     <Compile Include="Part3\ExponentialBackOff.cs" />
-    <Compile Include="Part5\GetAllExceptions.cs" />
+    <Compile Include="Part5\TaskAndExceptions.cs" />
     <Compile Include="Part5\ProcessAsTaskComplete.cs" />
     <Compile Include="Part5\WhenAllExample.cs" />
     <Compile Include="Part5\WhenAnyExample.cs" />

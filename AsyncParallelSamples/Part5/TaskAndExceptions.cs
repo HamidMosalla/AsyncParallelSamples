@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace AsyncParallelSamples.Part5
 {
-    class GetAllExceptions
+    public class TaskAndExceptions
     {
-        private static Task ThrowInvalidOperationExceptionAsync() => throw new NotImplementedException();
-        private static Task ThrowNotImplementedExceptionAsync() => throw new InvalidOperationException();
-
         public static async Task ObserveAllExceptionsAsync()
         {
-            var task1 = ThrowNotImplementedExceptionAsync();
-            var task2 = ThrowInvalidOperationExceptionAsync();
+            var task1 = Task.Run(() => throw new NotImplementedException("NotImplementedException is expected!"));
+            var task2 = Task.Run(() => throw new InvalidOperationException("InvalidOperationException is expected!"));
 
             Task allTasks = Task.WhenAll(task1, task2);
             try
@@ -29,8 +26,8 @@ namespace AsyncParallelSamples.Part5
 
         public static async Task OnlyTheFirstOne()
         {
-            var task1 = ThrowNotImplementedExceptionAsync();
-            var task2 = ThrowInvalidOperationExceptionAsync();
+            var task1 = Task.Run(() => throw new NotImplementedException("NotImplementedException is expected!"));
+            var task2 = Task.Run(() => throw new InvalidOperationException("InvalidOperationException is expected!"));
 
             Task allTasks = Task.WhenAll(task1, task2);
 
@@ -38,9 +35,13 @@ namespace AsyncParallelSamples.Part5
             {
                 await allTasks;
             }
-            catch(Exception e)
+            catch (AggregateException e)
             {
-                
+
+            }
+            catch (Exception e)
+            {
+
             }
         }
     }

@@ -19,7 +19,7 @@ namespace AsyncParallelSamples
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
-            await GetAllExceptions.OnlyTheFirstOne();
+            await TaskAndExceptions.OnlyTheFirstOne();
 
             var blog = new ConcurrentCollections();
             await blog.UseBlockingQueue();
