@@ -19,7 +19,7 @@ namespace AsyncParallelSamples
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
-             TaskAndExceptions.NestedAggregateException();
+            AvoidAsyncVoid.UseMethodWithAsyncVoid();
 
             var blog = new ConcurrentCollections();
             await blog.UseBlockingQueue();

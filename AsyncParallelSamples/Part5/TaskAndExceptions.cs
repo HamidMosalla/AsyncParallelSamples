@@ -94,5 +94,26 @@ namespace AsyncParallelSamples.Part5
                 var flatNestedExceptions = task1.Exception.Flatten();
             }
         }
+
+        public static void HanleException()
+        {
+            var task1 = Task.Run(() => throw new InvalidOperationException("InvalidOperationException exception is expected!"));
+            var task2 = Task.Run(() => throw new ArgumentNullException("ArgumentNullException exception is expected!"));
+
+            try
+            {
+                task2.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                // Call the Handle method to handle the custom exception, otherwise rethrow the exception.
+                ae.Handle(ex =>
+                {
+                    if (ex is InvalidOperationException) Console.WriteLine(ex.Message);
+
+                    return ex is InvalidOperationException;
+                });
+            }
+        }
     }
 }

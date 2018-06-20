@@ -8,7 +8,7 @@ namespace AsyncParallelSamples.Misc
 {
     public class AvoidAsyncVoid
     {
-        public void UseMethodWithAsyncVoid()
+        public static void UseMethodWithAsyncVoid()
         {
             try
             {
@@ -16,15 +16,35 @@ namespace AsyncParallelSamples.Misc
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Ex Message" + e.Message);
             }
         }
 
-        public async void MethodWithException()
+        public static async void MethodWithException()
         {
             await Task.Delay(1000);
             throw new Exception("The control doesn't hit the catch line if async void is used.");
         }
 
+        public class AvoidAsyncVoidCorrected
+        {
+            public static async Task UseMethodWithAsyncVoid()
+            {
+                try
+                {
+                    await MethodWithException();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ex Message" + e.Message);
+                }
+            }
+
+            public static async Task MethodWithException()
+            {
+                await Task.Delay(1000);
+                throw new Exception("The control doesn't hit the catch line if async void is used.");
+            }
+        }
     }
 }
