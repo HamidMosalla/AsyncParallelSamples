@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AsyncParallelSamples.Collections;
+using AsyncParallelSamples.DataflowMesh;
 using AsyncParallelSamples.Misc;
 using AsyncParallelSamples.Part2;
 using AsyncParallelSamples.Part5;
@@ -19,7 +20,7 @@ namespace AsyncParallelSamples
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
-            AvoidAsyncVoid.UseMethodWithAsyncVoid();
+            await TransformBlockSample.SquareBlock();
 
             var blog = new ConcurrentCollections();
             await blog.UseBlockingQueue();
