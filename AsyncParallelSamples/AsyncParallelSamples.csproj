@@ -63,6 +63,7 @@
     <Compile Include="Misc\AvoidAsyncVoid.cs" />
     <Compile Include="Misc\BlockingSignals.cs" />
     <Compile Include="Misc\AsyncProperty.cs" />
+    <Compile Include="Misc\SynchronizationContextSample.cs" />
     <Compile Include="Misc\FromAsyncVsTaskCompletionSource.cs" />
     <Compile Include="Misc\ParallelMethodInvocation.cs" />
     <Compile Include="Misc\TaskYield.cs" />
