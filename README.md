@@ -1,7 +1,7 @@
 # AsyncParallelSamples
 This repository contains sample codes related to a series of post on asynchronous and parallel programming in .Net. You can find these posts on my [blog](http://hamidmosalla.com).  
 
-[Part 1 - Concurrent Vs Parallel](http://hamidmosalla.com/2018/03/16/concurrency-vs-parallelism/)
+[Part 1 - Concurrency Vs Parallelism](http://hamidmosalla.com/2018/03/16/concurrency-vs-parallelism/)
 
 [Part 2 - When to Use Async and Await and How it Works](http://hamidmosalla.com/2018/03/30/when-to-use-async-and-await-and-how-it-works/)
 
