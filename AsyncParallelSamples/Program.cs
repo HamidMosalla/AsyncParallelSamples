@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,14 +17,23 @@ namespace AsyncParallelSamples
     {
         static async Task Main(string[] args)
         {
+            new Deadlock();
+
             //AwaitReleaseThreadToCaller.Print();
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
             await TransformBlockSample.SquareBlock();
 
+            Task task = null;
+
+            TaskAwaiter awaiter = task.GetAwaiter();
+            
+
             var blog = new ConcurrentCollections();
             await blog.UseBlockingQueue();
+
+
         }
 
         public static async Task<int> Task1()

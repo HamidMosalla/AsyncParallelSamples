@@ -63,11 +63,14 @@
     <Compile Include="Misc\AvoidAsyncVoid.cs" />
     <Compile Include="Misc\BlockingSignals.cs" />
     <Compile Include="Misc\AsyncProperty.cs" />
+    <Compile Include="Misc\Deadlock.cs" />
     <Compile Include="Misc\SynchronizationContextSample.cs" />
     <Compile Include="Misc\FromAsyncVsTaskCompletionSource.cs" />
     <Compile Include="Misc\ParallelMethodInvocation.cs" />
     <Compile Include="Misc\TaskYield.cs" />
+    <Compile Include="Misc\ThreadSafety.cs" />
     <Compile Include="Part2\AsyncThenAndNow.cs" />
+    <Compile Include="Part2\Awaitable.cs" />
     <Compile Include="Part2\AwaitReleaseThreadToCaller.cs" />
     <Compile Include="Part3\ExponentialBackOff.cs" />
     <Compile Include="Part5\TaskAndExceptions.cs" />
