@@ -18,3 +18,5 @@ This repository contains sample codes related to a series of post on asynchronou
 [Part 8 - Exception Handling In Asynchronous Code](http://hamidmosalla.com/2018/06/19/exception-handling-in-asynchronous-code/)
 
 [Part 9 - What Is SynchronizationContext](http://hamidmosalla.com/2018/06/24/what-is-synchronizationcontext/)
+
+[Part 10 - Thread Safety](http://hamidmosalla.com/2018/07/09/thread-safety/)
