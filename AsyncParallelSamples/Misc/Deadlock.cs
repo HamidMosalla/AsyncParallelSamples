@@ -11,6 +11,7 @@ namespace AsyncParallelSamples.Misc
         static Deadlock()
         {
             // Let's run the initialization on another thread!
+            //https://ericlippert.com/2013/01/31/the-no-lock-deadlock/
             var thread = new System.Threading.Thread(Initialize);
             thread.Start();
             thread.Join();
