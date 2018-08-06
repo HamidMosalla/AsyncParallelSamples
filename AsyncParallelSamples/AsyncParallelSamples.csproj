@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="Collections\ConcurrentCollections.cs" />
     <Compile Include="Collections\ImmutableCollections.cs" />
-    <Compile Include="DataflowMesh\TransformBlockSample.cs" />
+    <Compile Include="TPL Dataflow\TransformBlockSample.cs" />
     <Compile Include="Misc\AsyncDispose.cs" />
     <Compile Include="Misc\AsyncLazy.cs" />
     <Compile Include="Misc\AvoidAsyncVoid.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reactive Extensions\WebClientObservableExample.cs" />
+    <Compile Include="TPL Dataflow\ActionBlockSample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
