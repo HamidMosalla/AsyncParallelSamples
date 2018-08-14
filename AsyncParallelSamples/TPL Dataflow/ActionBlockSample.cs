@@ -89,10 +89,9 @@ namespace AsyncParallelSamples.TPL_Dataflow
 
             // Wait for the last block in the pipeline to process all messages.
             printReversedWords.Completion.Wait();
-        }
-    }
 
-    /* Sample output:
+
+            /* Sample output:
        Downloading 'http://www.gutenberg.org/files/6130/6130-0.txt'...
        Creating word list...
        Filtering word list...
@@ -123,10 +122,11 @@ namespace AsyncParallelSamples.TPL_Dataflow
        Found reversed words ward/draw
     */
 
+        }
+    }
 
     public class ActionBlockSample
     {
-
         void ActionBlockWithConfiguration()
         {
             Action<int> slowConsumer = x => { };
@@ -138,7 +138,6 @@ namespace AsyncParallelSamples.TPL_Dataflow
             };
 
             var consumerBlock = new ActionBlock<int>(slowConsumer, blockConfiguration);
-
 
         }
 
