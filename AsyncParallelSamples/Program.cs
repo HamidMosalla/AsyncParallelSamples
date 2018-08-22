@@ -17,22 +17,22 @@ namespace AsyncParallelSamples
     {
         static async Task Main(string[] args)
         {
-            new Deadlock();
+            //new Deadlock();
 
             //AwaitReleaseThreadToCaller.Print();
             //BlockingSignals.Block();
             //await TaskYield.Demo();
             //ImmutableCollections.UseImmutableStack();
-            await TransformBlockSample.SquareBlock();
+            //await TransformBlockSample.SquareBlock();
 
-            Task task = null;
+            //Task task = null;
 
-            TaskAwaiter awaiter = task.GetAwaiter();
-            
+            //TaskAwaiter awaiter = task.GetAwaiter();
 
-            var blog = new ConcurrentCollections();
-            await blog.UseBlockingQueue();
 
+            //var blog = new ConcurrentCollections();
+            //await blog.UseBlockingQueue();
+            ActionBlockExample1.ActionBlockExample1Run();
 
         }
 

@@ -19,6 +19,7 @@ namespace AsyncParallelSamples.Misc
 
         static void Initialize() { /* TODO: Add initialization code */ }
 
-        static void Main() { }
+        //comment it out for test
+        //static void Main() { }
     }
 }

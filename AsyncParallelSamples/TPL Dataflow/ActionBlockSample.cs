@@ -5,6 +5,25 @@ using System.Threading.Tasks.Dataflow;
 
 namespace AsyncParallelSamples.TPL_Dataflow
 {
+    static class ActionBlockExample1
+    {
+        static public void ActionBlockExample1Run()
+        {
+            var actionBlock = new ActionBlock<int>(n => Console.WriteLine(n));
+
+            for (int i = 0; i < 10; i++)
+            {
+                actionBlock.Post(i);
+            }
+
+            actionBlock.Complete();
+
+            actionBlock.Completion.Wait();
+
+            Console.WriteLine("Done");
+        }
+    }
+
     public class ActionBlockSample
     {
         void ActionBlockWithConfiguration()
