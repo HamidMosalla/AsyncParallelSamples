@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Collections\ConcurrentCollections.cs" />
     <Compile Include="Collections\ImmutableCollections.cs" />
+    <Compile Include="TPL Dataflow\BetterAsyncParallelActionBlock.cs" />
     <Compile Include="TPL Dataflow\DataflowReversedWords.cs" />
     <Compile Include="TPL Dataflow\TransformBlockSample.cs" />
     <Compile Include="Misc\AsyncDispose.cs" />
