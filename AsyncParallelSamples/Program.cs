@@ -32,7 +32,7 @@ namespace AsyncParallelSamples
 
             //var blog = new ConcurrentCollections();
             //await blog.UseBlockingQueue();
-            ActionBlockExample1.ActionBlockExample1Run();
+            await ActionBlockExample1.ActionBlockExample1RunAsync();
 
         }
 
