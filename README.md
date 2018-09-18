@@ -20,3 +20,7 @@ This repository contains sample codes related to a series of post on asynchronou
 [Part 9 - What Is SynchronizationContext](http://hamidmosalla.com/2018/06/24/what-is-synchronizationcontext/)
 
 [Part 10 - Thread Safety](http://hamidmosalla.com/2018/07/09/thread-safety/)
+
+[Part 11 - What is TPL Dataflow in .Net and When Should We Use It](http://hamidmosalla.com/2018/08/04/what-is-tpl-dataflow-in-net-and-when-should-we-use-it/)
+
+[Part 12 - More Robust Asynchrony and Parallelism With TPL Dataflow ActionBlock](http://hamidmosalla.com/2018/08/24/more-robust-asynchrony-and-parallelism-with-tpl-dataflow-actionblock/)
